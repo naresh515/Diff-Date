@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diff Between Days</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
 <body>
@@ -21,11 +22,12 @@
                 <h1>Start Date</h1>
                 <div class="date-picker">
                     <label for="date">
-                        <input id="start">
+                        <input id="start"><button class="first" data-i="0"><i
+                                class="fa-solid fa-calendar-days"></i></button>
                     </label>
                     <div id="show_error"></div>
                 </div>
-                <button class="ancher" onclick="getDate()">
+                <button class="ancher" id="today-btn" onclick="setStartDate(this)">
                     <p>Today</p>
                 </button>
             </div>
@@ -34,10 +36,10 @@
                 <div class="date-picker">
                     <label for="date">
                         <input id="end">
-                    </label>
+                    </label><button class="first" data-i="1"><i class="fa-solid fa-calendar-days"></i></button>
                     <div id="show_error1"></div>
                 </div>
-                <button class="ancher" onclick="getDate()">
+                <button class="ancher" id="today-btn1" onclick="setEndDate(this)">
                     <p>Today</p>
                 </button>
             </div>

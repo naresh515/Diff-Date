@@ -20,33 +20,24 @@ $(document).ready(function () {
         });
 
         $("#click").on('click', function () {
-            dateValidator(date1, date2);
+            const startDate = new Date($('#start').val());
+            const endDate = new Date($('#end').val());
+
+            dateValidator(startDate, endDate);
             var oneDay = 24 * 60 * 60 * 1000;
-            var diffDays = (date2 - date1) / oneDay + 1;
+            var diffDays = (endDate - startDate) / oneDay + 1;
             document.getElementById("output").innerHTML = diffDays + " days";
 
         });
 
         $("#btn-btn").on('click', function () {
-            dateValidator(date1, date2);
-            var numofDates = getBusinessDatesCount(date1, date2);
+            const startDate = new Date($('#start').val());
+            const endDate = new Date($('#end').val());
+
+            dateValidator(startDate, endDate);
+            var numofDates = getBusinessDatesCount(startDate, endDate);
             document.getElementById("poutput").innerHTML = numofDates + " days";
 
-        });
-
-        $(".btn1").click(function () {
-            if (date1 == null || date2 == null) {
-                $("#output").removeClass("opecity-btn", 500);
-            } else {
-                $("#output").addClass("opecity-btn", 500);
-            }
-        });
-        $(".btn").click(function () {
-            if (date1 == null || date2 == null) {
-                $("#poutput").removeClass("opecity-btn", 500);
-            } else {
-                $("#poutput").addClass("opecity-btn", 500);
-            }
         });
     });
 })
@@ -61,22 +52,36 @@ function getBusinessDatesCount(date1, date2) {
     }
     return count;
 }
-function getDate() {
-    console.log(new Date);
-}
 
-
-function dateValidator(date1, date2) {
-    if (date1 == null && date2 == null) {
+function dateValidator(startDate, endDate) {
+    if (startDate == '' && endDate == '') {
         $("#show_error").html('** Please Choose Date');
         $("#show_error1").html('** Please Choose Date');
-    } else if (date1 == null) {
+    } else if (startDate == '') {
         $("#show_error").html('** Please Choose Date');
     }
-    else if (date2 == null) {
+    else if (endDate == '') {
         $("#show_error1").html('** Please Choose Date');
     } else {
         $("#show_error").empty()
         $("#show_error1").empty()
     }
+}
+
+
+function getCurrentDate() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = mm + '/' + dd + '/' + yyyy;
+    return today;
+}
+
+function setStartDate() {
+    $('#start').val(getCurrentDate());
+}
+
+function setEndDate() {
+    $('#end').val(getCurrentDate());
 }
