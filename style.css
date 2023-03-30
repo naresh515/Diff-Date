@@ -27,8 +27,15 @@ input[type="date"] {
     cursor: pointer;
 }
 
+.ancher a:hover {
+    color: black;
+}
+
 .ancher {
     margin: 20px 0px;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .chackbox {
@@ -43,19 +50,10 @@ input[type="date"] {
     font-size: 25px;
 }
 
-.btn {
-    background: none;
-    border: none;
-    outline: none;
-    color: blue;
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.btn1 {
-    border: none;
-    outline: none;
+.btn1,
+.btn,
+#output,
+#poutput {
     background: #7db500;
     color: white;
     padding: 10px 30px;
@@ -63,8 +61,31 @@ input[type="date"] {
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
-#btn-btn {
-    margin-top: 85px;
+.button-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+#output,
+#poutput {
+    margin-top: 10px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+}
+
+.opecity-btn {
+    opacity: 1 !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.heading {
+    box-shadow: rgba(80, 80, 80, 0.2) 0px 1px 8px 0px, rgba(80, 80, 80, 0.14) 0px 3px 4px 0px, rgba(80, 80, 80, 0.12) 0px 3px 3px -2px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }

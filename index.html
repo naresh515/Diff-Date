@@ -12,6 +12,10 @@
 <body>
 
     <div class="container">
+
+        <div class="heading">
+            <h1>Get Diffrence between Two dates</h1>
+        </div>
         <div class="main-header">
             <div class="start-date">
                 <h1>Start Date</h1>
@@ -20,24 +24,9 @@
                         <input id="start">
                     </label>
                 </div>
-                <div class="ancher">
+                <button class="ancher" onclick="getDate()">
                     <a href="#">Today</a>
-                </div>
-
-                <div class="chackbox">
-                    <input type="checkbox">
-                    <p class="input-text">Include end date in calculation(1 day is added)</p>
-                </div>
-                <div class="ancher">
-                    <a href="#">Add time fields</a>
-                </div>
-                <div class="ancher">
-                    <a href="#">Add time zone conversion</a>
-                </div>
-                <div id="click">
-                    <button type="button" class="btn1">Calculate Duration</button>
-                </div>
-                <div id="output"></div>
+                </button>
             </div>
             <div class="end-date">
                 <h1>End Date</h1>
@@ -46,12 +35,19 @@
                         <input id="end">
                     </label>
                 </div>
-                <div class="ancher">
+                <button class="ancher">
                     <a href="#">Today</a>
-                </div>
-                <div id="btn-btn">
-                    <button type="button" class="btn">Count Only Workdays</button>
-                </div>
+                </button>
+            </div>
+        </div>
+        <div class="button-btn">
+            <div id="click">
+                <button type="button" class="btn1">Calculate Duration</button>
+                <div id="output"></div>
+            </div>
+
+            <div id="btn-btn">
+                <button type="button" class="btn">Count Only Workdays</button>
                 <div id="poutput"></div>
             </div>
         </div>

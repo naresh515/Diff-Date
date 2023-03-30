@@ -29,6 +29,13 @@ $(document).ready(function () {
             var numofDates = getBusinessDatesCount(date1, date2);
             document.getElementById("poutput").innerHTML = numofDates + " days";
         });
+
+        $(".btn1").click(function () {
+            $("#output").toggleClass("opecity-btn", 500);
+        });
+        $(".btn").click(function () {
+            $("#poutput").toggleClass("opecity-btn", 500);
+        });
     });
 })
 
@@ -41,4 +48,7 @@ function getBusinessDatesCount(date1, date2) {
         curDate.setDate(curDate.getDate() + 1);
     }
     return count;
-}  
+}
+function getDate() {
+    console.log(new Date);
+}
