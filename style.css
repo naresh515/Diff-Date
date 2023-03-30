@@ -1,0 +1,70 @@
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+input[type="date"] {
+    padding: 5px 30px;
+}
+
+.ancher a {
+    text-decoration: none;
+    font-size: 20px;
+    color: blue;
+    cursor: pointer;
+}
+
+.ancher {
+    margin: 20px 0px;
+}
+
+.chackbox {
+    display: flex;
+    gap: 5px;
+}
+
+.input-text {
+    padding: 0px;
+    margin: 0px;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.btn {
+    background: none;
+    border: none;
+    outline: none;
+    color: blue;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn1 {
+    border: none;
+    outline: none;
+    background: #7db500;
+    color: white;
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#btn-btn {
+    margin-top: 85px;
+}

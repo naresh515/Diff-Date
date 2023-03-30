@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diff Between Days</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="main-header">
+            <div class="start-date">
+                <h1>Start Date</h1>
+                <div class="date-picker">
+                    <label for="date">
+                        <input id="start">
+                    </label>
+                </div>
+                <div class="ancher">
+                    <a href="#">Today</a>
+                </div>
+
+                <div class="chackbox">
+                    <input type="checkbox">
+                    <p class="input-text">Include end date in calculation(1 day is added)</p>
+                </div>
+                <div class="ancher">
+                    <a href="#">Add time fields</a>
+                </div>
+                <div class="ancher">
+                    <a href="#">Add time zone conversion</a>
+                </div>
+                <div id="click">
+                    <button type="button" class="btn1">Calculate Duration</button>
+                </div>
+                <div id="output"></div>
+            </div>
+            <div class="end-date">
+                <h1>End Date</h1>
+                <div class="date-picker">
+                    <label for="date">
+                        <input id="end">
+                    </label>
+                </div>
+                <div class="ancher">
+                    <a href="#">Today</a>
+                </div>
+                <div id="btn-btn">
+                    <button type="button" class="btn">Count Only Workdays</button>
+                </div>
+                <div id="poutput"></div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./style.js"></script>
+</body>
+
+</html>
