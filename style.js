@@ -20,21 +20,33 @@ $(document).ready(function () {
         });
 
         $("#click").on('click', function () {
+            dateValidator(date1, date2);
             var oneDay = 24 * 60 * 60 * 1000;
             var diffDays = (date2 - date1) / oneDay + 1;
             document.getElementById("output").innerHTML = diffDays + " days";
+
         });
 
         $("#btn-btn").on('click', function () {
+            dateValidator(date1, date2);
             var numofDates = getBusinessDatesCount(date1, date2);
             document.getElementById("poutput").innerHTML = numofDates + " days";
+
         });
 
         $(".btn1").click(function () {
-            $("#output").toggleClass("opecity-btn", 500);
+            if (date1 == null || date2 == null) {
+                $("#output").removeClass("opecity-btn", 500);
+            } else {
+                $("#output").addClass("opecity-btn", 500);
+            }
         });
         $(".btn").click(function () {
-            $("#poutput").toggleClass("opecity-btn", 500);
+            if (date1 == null || date2 == null) {
+                $("#poutput").removeClass("opecity-btn", 500);
+            } else {
+                $("#poutput").addClass("opecity-btn", 500);
+            }
         });
     });
 })
@@ -51,4 +63,20 @@ function getBusinessDatesCount(date1, date2) {
 }
 function getDate() {
     console.log(new Date);
+}
+
+
+function dateValidator(date1, date2) {
+    if (date1 == null && date2 == null) {
+        $("#show_error").html('** Please Choose Date');
+        $("#show_error1").html('** Please Choose Date');
+    } else if (date1 == null) {
+        $("#show_error").html('** Please Choose Date');
+    }
+    else if (date2 == null) {
+        $("#show_error1").html('** Please Choose Date');
+    } else {
+        $("#show_error").empty()
+        $("#show_error1").empty()
+    }
 }

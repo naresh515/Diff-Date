@@ -23,9 +23,10 @@
                     <label for="date">
                         <input id="start">
                     </label>
+                    <div id="show_error"></div>
                 </div>
                 <button class="ancher" onclick="getDate()">
-                    <a href="#">Today</a>
+                    <p>Today</p>
                 </button>
             </div>
             <div class="end-date">
@@ -34,21 +35,22 @@
                     <label for="date">
                         <input id="end">
                     </label>
+                    <div id="show_error1"></div>
                 </div>
-                <button class="ancher">
-                    <a href="#">Today</a>
+                <button class="ancher" onclick="getDate()">
+                    <p>Today</p>
                 </button>
             </div>
-        </div>
-        <div class="button-btn">
-            <div id="click">
-                <button type="button" class="btn1">Calculate Duration</button>
-                <div id="output"></div>
-            </div>
+            <div class="button-btn">
+                <div id="click">
+                    <input type="submit" class="btn1" value="Calculate Duration">
+                    <div id="output"></div>
+                </div>
 
-            <div id="btn-btn">
-                <button type="button" class="btn">Count Only Workdays</button>
-                <div id="poutput"></div>
+                <div id="btn-btn">
+                    <input type="submit" class="btn" value="Count Only Workdays">
+                    <div id="poutput"></div>
+                </div>
             </div>
         </div>
     </div>
