@@ -45,10 +45,10 @@ $(document).ready(function () {
             var startDate = $('#start').val();
             var endDate = $('#end').val();
             if (startDate == '' || endDate == '') {
-                $("#output").removeClass("opactiy-out", 500)
+                $("#output").removeClass("opactiy-out")
             }
             else {
-                $("#output").addClass("opactiy-out", 500)
+                $("#output").addClass("opactiy-out")
             }
         });
 
@@ -56,11 +56,21 @@ $(document).ready(function () {
             var startDate = $('#start').val();
             var endDate = $('#end').val();
             if (startDate == '' || endDate == '') {
-                $("#poutput").removeClass("opactiy-out", 500)
+                $("#poutput").removeClass("opactiy-out")
             }
             else {
-                $("#poutput").addClass("opactiy-out", 500)
+                $("#poutput").addClass("opactiy-out")
             }
+        });
+
+        $("#reset-btn").click(function () {
+            $('#start').val('');
+            $('#end').val('');
+            $('#checkbox').prop('checked', false);
+            $('#output').html('');
+            $('#poutput').html('');
+            $("#show_error").empty();
+            $("#show_error1").empty();
         });
     });
 })
