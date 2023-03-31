@@ -150,3 +150,31 @@ i.fa-solid.fa-calendar-days {
     align-items: center;
     gap: 30px;
 }
+
+@media screen and (min-width: 320px) and (max-width: 800px) {
+    .main-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .date-btn {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chackbox {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .first-btn {
+        flex-direction: column;
+        overflow: hidden;
+        width: auto;
+        padding: 0px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
