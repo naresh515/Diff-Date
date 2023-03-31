@@ -103,10 +103,10 @@ function coutWorkingDays() {
     $("#poutput").html(numofDates + " days");
 }
 
-function getBusinessDatesCount(date1, date2) {
+function getBusinessDatesCount(startDate, endDate) {
     let count = 0;
-    const curDate = new Date(date1);
-    while (curDate < date2) {
+    const curDate = new Date(startDate);
+    while (curDate < endDate) {
         const dayOfWeek = curDate.getDay();
         if (dayOfWeek !== 0 && dayOfWeek !== 6) count++;
         curDate.setDate(curDate.getDate() + 1);
