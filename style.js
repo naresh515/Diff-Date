@@ -8,6 +8,7 @@ $(document).ready(function () {
                 var a = $.datepicker.formatDate("yy mm dd", $(this).datepicker("getDate"));
                 var b = a.split(' ');
                 date1 = new Date(b);
+                $("#end").datepicker('option', "minDate", new Date(date1));
             }
         });
 
@@ -16,6 +17,7 @@ $(document).ready(function () {
                 var c = $.datepicker.formatDate("yy mm dd", $(this).datepicker("getDate"));
                 var d = c.split(' ');
                 date2 = new Date(d);
+                $("#start").datepicker('option', "maxDate", new Date(date2));
             }
         });
         $('#btn-icon').on('click', function () {
@@ -62,7 +64,6 @@ $(document).ready(function () {
         });
     });
 })
-
 
 function calculateDiff() {
     var startDate = $('#start').val();
@@ -129,7 +130,6 @@ function dateValidator(startDate, endDate) {
 
     }
 }
-
 
 function getCurrentDate() {
     var today = new Date();
