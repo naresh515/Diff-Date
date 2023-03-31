@@ -64,13 +64,7 @@ $(document).ready(function () {
         });
 
         $("#reset-btn").click(function () {
-            $('#start').val('');
-            $('#end').val('');
-            $('#checkbox').prop('checked', false);
-            $('#output').html('');
-            $('#poutput').html('');
-            $("#show_error").empty();
-            $("#show_error1").empty();
+            location.reload();
         });
     });
 })
