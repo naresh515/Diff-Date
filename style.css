@@ -26,6 +26,8 @@ input[type="date"] {
     font-size: 20px;
     color: blue;
     cursor: pointer;
+    margin: 0px;
+    padding: 0px;
 }
 
 .ancher a:hover {
@@ -42,6 +44,9 @@ input[type="date"] {
 .chackbox {
     display: flex;
     gap: 5px;
+    margin-left: 175px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .input-text {
@@ -70,7 +75,6 @@ input[type="date"] {
     align-items: center;
     gap: 30px;
     position: relative;
-    left: 50%;
     top: 50px;
 }
 
@@ -79,7 +83,14 @@ input[type="date"] {
     margin-top: 10px;
     transition: all 0.5s ease-in-out;
     text-align: center;
-    padding-left: 40px;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.opactiy-out {
+    opacity: 1 !important;
+    margin-left: 40px;
+    transition: all .5s ease-in-out;
 }
 
 .heading {
@@ -105,11 +116,28 @@ input[type="date"] {
     margin-left: -4px;
     border-left: none;
     background: none;
-    outline: non;
+    height: 34px;
+    outline: none;
+}
+
+i.fa-solid.fa-calendar-days {
+    font-size: 15px;
 }
 
 .hasDatepicker {
     border-right: none;
     outline: none;
     text-align: center;
+    width: 200px;
+    height: 30px;
+}
+
+.first-btn {
+    display: flex;
+}
+
+.date-btn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }

@@ -18,29 +18,82 @@ $(document).ready(function () {
                 date2 = new Date(d);
             }
         });
+        $('#btn-icon').on('click', function () {
+            $('#start').focus();
+        });
+
+        $('#btn-icon1').on('click', function () {
+            $('#end').focus();
+        });
 
         $("#click").on('click', function () {
-            const startDate = new Date($('#start').val());
-            const endDate = new Date($('#end').val());
+            calculateDiff()
+        });
 
-            dateValidator(startDate, endDate);
-            var oneDay = 24 * 60 * 60 * 1000;
-            var diffDays = (endDate - startDate) / oneDay + 1;
-            document.getElementById("output").innerHTML = diffDays + " days";
-
+        $("#checkbox").change(function () {
+            calculateDiff()
         });
 
         $("#btn-btn").on('click', function () {
-            const startDate = new Date($('#start').val());
-            const endDate = new Date($('#end').val());
+            var startDate = $('#start').val();
+            var endDate = $('#end').val();
 
+            if (startDate != '') {
+                startDate = new Date(startDate)
+            }
+
+            if (endDate != '') {
+                endDate = new Date(endDate)
+            }
             dateValidator(startDate, endDate);
             var numofDates = getBusinessDatesCount(startDate, endDate);
-            document.getElementById("poutput").innerHTML = numofDates + " days";
+            $("#poutput").html(numofDates + " days");
 
+        });
+        $("#click").on('click', function () {
+            var startDate = $('#start').val();
+            var endDate = $('#end').val();
+            if (startDate == '' || endDate == '') {
+                $("#output").removeClass("opactiy-out", 500)
+            }
+            else {
+                $("#output").addClass("opactiy-out", 500)
+            }
+        });
+
+        $("#btn-btn").on('click', function () {
+            var startDate = $('#start').val();
+            var endDate = $('#end').val();
+            if (startDate == '' || endDate == '') {
+                $("#poutput").removeClass("opactiy-out", 500)
+            }
+            else {
+                $("#poutput").addClass("opactiy-out", 500)
+            }
         });
     });
 })
+
+
+function calculateDiff() {
+    var startDate = $('#start').val();
+    var endDate = $('#end').val();
+
+    if (startDate != '') {
+        startDate = new Date(startDate)
+    }
+
+    if (endDate != '') {
+        endDate = new Date(endDate)
+    }
+    dateValidator(startDate, endDate);
+    var oneDay = 24 * 60 * 60 * 1000;
+    var diffDays = (endDate - startDate) / oneDay;
+    if ($("#checkbox").prop("checked")) {
+        diffDays++
+    }
+    $("#output").html(diffDays + " days");
+}
 
 function getBusinessDatesCount(date1, date2) {
     let count = 0;
@@ -65,6 +118,7 @@ function dateValidator(startDate, endDate) {
     } else {
         $("#show_error").empty()
         $("#show_error1").empty()
+
     }
 }
 
