@@ -27,29 +27,18 @@ $(document).ready(function () {
         });
 
         $("#click").on('click', function () {
-            calculateDiff()
+            calculateDiff();
         });
 
         $("#checkbox").change(function () {
-            calculateDiff()
+            calculateDiff();
+            coutWorkingDays();
         });
 
         $("#btn-btn").on('click', function () {
-            var startDate = $('#start').val();
-            var endDate = $('#end').val();
-
-            if (startDate != '') {
-                startDate = new Date(startDate)
-            }
-
-            if (endDate != '') {
-                endDate = new Date(endDate)
-            }
-            dateValidator(startDate, endDate);
-            var numofDates = getBusinessDatesCount(startDate, endDate);
-            $("#poutput").html(numofDates + " days");
-
+            coutWorkingDays();
         });
+
         $("#click").on('click', function () {
             var startDate = $('#start').val();
             var endDate = $('#end').val();
@@ -95,10 +84,29 @@ function calculateDiff() {
     $("#output").html(diffDays + " days");
 }
 
+function coutWorkingDays() {
+    var startDate = $('#start').val();
+    var endDate = $('#end').val();
+
+    if (startDate != '') {
+        startDate = new Date(startDate)
+    }
+
+    if (endDate != '') {
+        endDate = new Date(endDate)
+    }
+    dateValidator(startDate, endDate);
+    var numofDates = getBusinessDatesCount(startDate, endDate);
+    if ($("#checkbox").prop("checked")) {
+        numofDates++
+    }
+    $("#poutput").html(numofDates + " days");
+}
+
 function getBusinessDatesCount(date1, date2) {
     let count = 0;
     const curDate = new Date(date1);
-    while (curDate <= date2) {
+    while (curDate < date2) {
         const dayOfWeek = curDate.getDay();
         if (dayOfWeek !== 0 && dayOfWeek !== 6) count++;
         curDate.setDate(curDate.getDate() + 1);
